@@ -4,11 +4,8 @@
 // pass' back if it got into a hole.
 
 import UIKit
-<<<<<<< HEAD
-var image: UIImage!
-=======
+
 var image = UIImage()
->>>>>>> 5f6009711500d41b477ec80378976364a2bc5385
 
 var map = [[Int]]();
 
