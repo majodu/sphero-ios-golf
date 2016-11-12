@@ -5,6 +5,8 @@
 
 import UIKit
 
+var image = UIImage();
+
 var map=[[Int]]();
 
 struct hole {
@@ -20,8 +22,12 @@ for x in 0...999{
 
 class navigate_map {
     var map = [[Int]]();
-    var image = UIImage()
     
+    /*for x in 0...999{
+        for y in 0...999{
+            map[x][y]=0;
+        }
+    }*/
     
 	init(chosenMap: [[Int]]) {
 		map = chosenMap
