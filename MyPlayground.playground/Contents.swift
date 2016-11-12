@@ -9,9 +9,10 @@ var image = UIImage();
 
 var map=[[Int]]();
 
-struct hole {
-    
-    
+struct Hole {
+	var map: [[Int]]
+	var start: (x: Int, y: Int)
+	var end: (x: Int, y: Int)
 }
 
 for x in 0...999{
