@@ -36,6 +36,7 @@ class navigate_map {
 	
 	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
         
+        
 		return (false, false)
 	}
 
