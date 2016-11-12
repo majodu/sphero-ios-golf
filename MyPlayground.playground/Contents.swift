@@ -5,6 +5,7 @@
 
 import UIKit
 
+
 var image = UIImage(named:"map");
 
 func image(fromPixelValues pixelValues: [UInt8]?, width: Int, height: Int) -> CGImage?
@@ -72,22 +73,39 @@ func pixelValues(fromCGImage imageRef: CGImage?) -> (pixelValues: [UInt8]?, widt
     return (pixelValues, width, height)
 }
 var map = [[Int]]();
+=======
+var image = UIImage();
+
+var map=[[Int]]();
+
+struct Hole {
+	var map: [[Int]]
+	var start: (x: Int, y: Int)
+	var end: (x: Int, y: Int)
+}
+>>>>>>> a36effbae85906e12f6102f14eabb4d21317af9c
 
 for x in 0...999{
     for y in 0...999{
-        map[x][y] = 0
+        map[x][y]=0
     }
 }
 
 class navigate_map {
     var map = [[Int]]();
-	
+    
+    /*for x in 0...999{
+        for y in 0...999{
+            map[x][y]=0;
+        }
+    }*/
+    
 	init(chosenMap: [[Int]]) {
 		map = chosenMap
 	}
 	
-	func puttGolfBallTo(x: Double, y: Double) -> (success: Bool, stop: Bool) {
-		
+	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
+        
 		return (false, false)
 	}
 
