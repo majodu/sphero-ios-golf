@@ -93,10 +93,16 @@ class PuttPuttGameLogic {
 	
 
 	
-	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
+    func puttGolfBallTo(ballX: Int, ballY: Int) -> (success: Bool, stop: Bool) {
+        if(chosenHole.end.x != ballX && chosenHole.end.y != ballY){
+            return(false, false)
+        }else if(ballX == 255 || ballY == 255){
+            return(false, false)
+        }else{
+            return(true, true)
+        }
         
         
-		return (false, false)
 	}
 
 }
