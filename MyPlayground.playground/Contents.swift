@@ -5,9 +5,7 @@
 
 import UIKit
 
-var image = UIImage();
-
-var map=[[Int]]();
+var image = UIImage()
 
 struct Hole {
 	var map: [[Int]]
@@ -15,24 +13,20 @@ struct Hole {
 	var end: (x: Int, y: Int)
 }
 
-for x in 0...999{
-    for y in 0...999{
-        map[x][y]=0
-    }
-}
-
 class navigate_map {
-    var map = [[Int]]();
+	var chosenHole: Hole
     
-    /*for x in 0...999{
-        for y in 0...999{
-            map[x][y]=0;
-        }
-    }*/
-    
-	init(chosenMap: [[Int]]) {
-		map = chosenMap
+	init(givenHole: Hole) {
+		chosenHole = givenHole
+		
+		for x in 0...999 {
+			for y in 0...999 {
+				chosenHole.map[x][y]=0;
+			}
+		}
 	}
+	
+
 	
 	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
         
