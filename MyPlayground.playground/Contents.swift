@@ -1,9 +1,11 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
-var image = UIImage
+// class to pass location of sphero and pass' back whether to stop or not
+// pass' back if it got into a hole.
 
-var str = "Hello, playground"
+import UIKit
+var image = UIImage()
+
 var map = [[Int]]();
 
 for x in 0...999{
@@ -14,5 +16,7 @@ for x in 0...999{
 
 class navigate_map {
     var map = [[Int]]();
+    
+    
     
 }
