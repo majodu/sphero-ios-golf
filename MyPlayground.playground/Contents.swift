@@ -80,7 +80,7 @@ struct Hole {
 
 class PuttPuttGameLogic {
 	var chosenHole: Hole
-    
+	
 	init(givenHole: Hole) {
 		chosenHole = givenHole
 		
@@ -94,7 +94,6 @@ class PuttPuttGameLogic {
 
 	
 	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
-        
 		return (false, false)
 	}
 
