@@ -5,7 +5,7 @@
 
 import UIKit
 
-var image = UIImage(named:"map");
+var image = UIImage(named:"test")?.cgImage;
 
 func image(fromPixelValues pixelValues: [UInt8]?, width: Int, height: Int) -> CGImage?
 {
@@ -48,7 +48,7 @@ func image(fromPixelValues pixelValues: [UInt8]?, width: Int, height: Int) -> CG
     return imageRef
 }
 
-func pixelValues(fromCGImage imageRef: CGImage?) -> (pixelValues: [UInt8]?, width: Int, height: Int)
+func pixelValues(fromCGImage imageRef: CGImage?) -> [UInt8]
 {
     var width = 0
     var height = 0
@@ -69,9 +69,26 @@ func pixelValues(fromCGImage imageRef: CGImage?) -> (pixelValues: [UInt8]?, widt
         pixelValues = intensities
     }
     
-    return (pixelValues, width, height)
+    return pixelValues!;
+};
+var pixel_vals = pixelValues(fromCGImage: image)
+var map_array = [[Int]]()
+var array_size = 4
+var index = 0
+for row in 0...array_size{
+    var row_arr = [Int]()
+    for col in 0...array_size{
+        
+        if pixelValues(fromCGImage: image)[index] == UInt8(0){
+            row_arr.append(0);
+        }else{
+            row_arr.append(255);
+        }
+        index+=1
+    }
+    map_array.append(row_arr);
 }
-
+map_array
 struct Hole {
 	var map: [[Int]]
 	var start: (x: Int, y: Int)
@@ -92,9 +109,15 @@ class PuttPuttGameLogic {
 	}
 	
 
-	
-	func puttGolfBallTo(x: Int, y: Int) -> (success: Bool, stop: Bool) {
-		return (false, false)
-	}
+    func puttGolfBallTo(ballX: Int, ballY: Int) -> (success: Bool, stop: Bool) {
+        if(chosenHole.end.x != ballX && chosenHole.end.y != ballY){
+            return(false, false)
+        }else if(ballX == 0 || ballY == 0){
+            return(false, false)
+        }else{
+            return(true, true)
+        }
+        
+		}
 
 }
