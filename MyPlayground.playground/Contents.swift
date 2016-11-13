@@ -73,12 +73,12 @@ func pixelValues(fromCGImage imageRef: CGImage?) -> [UInt8]
 };
 var pixel_vals = pixelValues(fromCGImage: image)
 var map_array = [[Int]]()
-var array_size = 1000
+var array_size = 999
 for row in 0...array_size{
-    var row_arr = [Int]()
+    var row_arr = Array(repeating: 0, count: array_size)
     for col in 0...array_size{
         if pixel_vals[(col+1)*row] == UInt8(0){
-            row_arr.append(0);
+            row_arr[col] = 0;
         }else{
             row_arr.append(255);
         }
