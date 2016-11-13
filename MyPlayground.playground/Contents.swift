@@ -5,7 +5,7 @@
 
 import UIKit
 
-var image = UIImage(named:"map")?.cgImage;
+var image = UIImage(named:"test")?.cgImage;
 
 func image(fromPixelValues pixelValues: [UInt8]?, width: Int, height: Int) -> CGImage?
 {
@@ -73,14 +73,14 @@ func pixelValues(fromCGImage imageRef: CGImage?) -> [UInt8]
 };
 var pixel_vals = pixelValues(fromCGImage: image)
 var map_array = [[Int]]()
-var array_size = 999
+var array_size = 4
 for row in 0...array_size{
     var row_arr = Array(repeating: 0, count: array_size)
     for col in 0...array_size{
         if pixel_vals[(col+1)*row] == UInt8(0){
             row_arr[col] = 0;
         }else{
-            row_arr.append(255);
+            row_arr[col] = 255;
         }
     }
     map_array.append(row_arr);
